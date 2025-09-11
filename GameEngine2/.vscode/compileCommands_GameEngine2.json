@@ -1,0 +1,26 @@
+[
+	{
+		"file": "D:\\25-2\\GameEngine2\\Source\\GameEngine2\\GameEngine2.Build.cs",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\25-2\\GameEngine2\\.vscode\\compileCommands_GameEngine2\\GameEngine2.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "D:\\25-2\\GameEngine2\\Source\\GameEngine2\\GameEngine2.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\25-2\\GameEngine2\\.vscode\\compileCommands_GameEngine2\\GameEngine2.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "D:\\25-2\\GameEngine2\\Source\\GameEngine2\\GameEngine2.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\25-2\\GameEngine2\\.vscode\\compileCommands_GameEngine2\\GameEngine2.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	}
+]
