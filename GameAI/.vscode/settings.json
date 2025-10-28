@@ -66,5 +66,5 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj",
     },
-    "dotnet.defaultSolution": "GameAI_2160013_v1.0.sln"
+    "dotnet.defaultSolution": "GameAI.sln"
 }
