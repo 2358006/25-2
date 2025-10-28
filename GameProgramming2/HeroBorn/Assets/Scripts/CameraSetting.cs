@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Animations;
 
-public class Camera : MonoBehaviour
+public class CameraSetting : MonoBehaviour
 {
     public Vector3 camOffset = new Vector3(0f, 1.2f, -2.6f);
 
