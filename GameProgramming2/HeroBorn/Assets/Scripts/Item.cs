@@ -21,4 +21,13 @@ public class item : MonoBehaviour
     {
         itemTransform.Rotate(rotSpeed * Time.deltaTime, 0, 0);
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Player")
+        {
+            Destroy(this.transform.gameObject);
+            Debug.Log("Item collected");
+        }
+    }
 }
