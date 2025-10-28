@@ -101,14 +101,10 @@ public class EnemyFSM : MonoBehaviour
         f_MonsterTransitionCheck(); // 몬스터 상태전환 체크 매서드 호출
     }
 
-
-
-
     private void f_MonsterIdleState()       // 대기상태 처리 매서드
     {
         MonsterAnimatorStateChange("IDLE");
     }
-
 
     private void f_MonsterPatrolState()       // 활보 상태
     {
@@ -119,8 +115,6 @@ public class EnemyFSM : MonoBehaviour
             StartCoroutine("PatrolMove");
         }
     }
-
-
 
     private void f_MonsterChaseState()     // 추격상태 처리 매서드
     {
