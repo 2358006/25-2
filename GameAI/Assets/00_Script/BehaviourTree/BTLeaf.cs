@@ -1,16 +1,14 @@
-using UnityEngine;
-
-public class BTLeaf : MonoBehaviour
+public class BTLeaf : BTNode
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    System.Func<BTNodeStatus> action;
+
+    public BTLeaf(System.Func<BTNodeStatus> action)
     {
-        
+        this.action = action;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override BTNodeStatus Evaluate()
     {
-        
+        return action();
     }
 }
