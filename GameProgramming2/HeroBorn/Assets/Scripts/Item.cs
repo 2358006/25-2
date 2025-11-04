@@ -2,22 +2,19 @@ using UnityEngine;
 
 public class item : MonoBehaviour
 {
+    GameManager gameManager;
+    Transform itemTransform;
+
     [Header("Speed")]
     public int rotSpeed = 100;
 
-    Transform itemTransform;
-
     void Awake()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         itemTransform = this.GetComponent<Transform>();
     }
 
     void Update()
-    {
-        ItmeRotation();
-    }
-
-    void ItmeRotation()
     {
         itemTransform.Rotate(rotSpeed * Time.deltaTime, 0, 0);
     }
@@ -29,5 +26,7 @@ public class item : MonoBehaviour
             Destroy(this.transform.gameObject);
             Debug.Log("Item collected");
         }
+
+        gameManager.items += 1;
     }
 }
