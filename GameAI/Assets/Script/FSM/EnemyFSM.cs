@@ -72,7 +72,7 @@ public class EnemyFSM : MonoBehaviour
 
 
 
-    void Start()
+    void Awake()
     {
         animatorMonsterState = GetComponent<Animator>();
     }
