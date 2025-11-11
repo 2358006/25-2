@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
+    GameManager gameManager;
+
     Rigidbody rigid;
     CapsuleCollider col;
 
@@ -26,6 +28,7 @@ public class Player : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     void FixedUpdate()
@@ -66,6 +69,14 @@ public class Player : MonoBehaviour
 
         if (Keyboard.current.spaceKey.isPressed) { isJumping = true; }
         if (Keyboard.current.jKey.isPressed) { isShooting = true; }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Enemy")
+        {
+            gameManager.hp -= 1;
+        }
     }
 
     bool IsGrounded()
