@@ -1,18 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-// 지금까지 만든 Node, Leaf, Sequence, Selector 클래스를 조립하여 실제 적 AI의 행동 트리를 구성하고 실행하는 메인 스크립트
-// 적의 상태(공격, 추적, 순찰, 대기)와 그에 따른 행동을 정의하는 클래스 스크립트
-
 public class EnemyBT : MonoBehaviour
 {
-    /* 필드(멤버 변수) 정의하기
-    - root : 행동 트리의 가장 최상위 노드. 모든 로직은 이 root에서 시작됨
-    - animatorMonsterState : 적 캐릭터의 애니메이션을 제어하는 컴포넌트
-    - characterTarget : 추적하고 공격할 대상(플레이어)의 위치정보
-    - monsterSpeed, fCahseRange, attackRange : 각각 이동속도 추적시작 거리 공격 가능 거리 변수
-    */
-
     public Transform[] waypoints;
     int waypointIndex = 0;
 
@@ -24,18 +14,6 @@ public class EnemyBT : MonoBehaviour
     public float attackRange = 1.5f;        // 공격할 수 있는 거리 변수, 추적변수와 초기값은 달라야 함. 초기값 1.5m
     public float monsterSpeed = 2.0f;       // 몬스터가 NPC(캐릭터) 추적할 스피드 값 저장 변수
     public float patrolRange = 5.0f;
-
-    /* 루트 = Selector
-            - 첫 번째 자식 노드 : 시퀀스(Sequence)
-                - 조건 노드 : 플레이어가 공격 범위 내에 있는가?
-                - 행동 노드 : 공격하기
-            - 두 번째 자식 노드 : 시퀀스(Sequence)
-                - 조건 노드 : 플레이어가 추적 범위 내에 있는가?
-                - 행동 노드 : 추적하기
-            - 세 번째 자식 노드 : 행동 노드
-                - 행동 노드 : 대기하기
-            우선순위는 리스트 순서로 구현
-    */
 
     void Awake()
     {

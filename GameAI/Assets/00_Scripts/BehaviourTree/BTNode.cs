@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public enum BTNodeStatus
 {
     Success, // 성공 : 상위노드가 다음 단계로 넘어갈 상태
