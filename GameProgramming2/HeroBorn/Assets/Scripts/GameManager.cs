@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-public class GameManager : MonoBehaviour
+using CustomExtensions;
+public class GameManager : MonoBehaviour, IManager
 {
     Text healthText;
     Text itemText;
@@ -63,6 +63,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    string state;
+    public string State
+    {
+        get { return state; }
+        set { state = value; }
+    }
+
     void Awake()
     {
         healthText = GameObject.Find("Health").GetComponent<Text>();
@@ -79,12 +86,22 @@ public class GameManager : MonoBehaviour
         healthText.text = $"Life : {playerHp}";
         winButton.gameObject.SetActive(false);
         lostButton.gameObject.SetActive(false);
+        Initialize();
+    }
+
+    public void Initialize()
+    {
+        state = "Game manager initialize";
+
+        state.FancyDebug();
+
+        Debug.Log(state);
     }
 
     public void RestartScene()
     {
-        SceneManager.LoadScene(0);
-        Time.timeScale = 1f;
+        // Utilities.RestartLevel();
+        Utilities.RestartLevel(0);
     }
 
     public void UpdateScene(string updateText)
