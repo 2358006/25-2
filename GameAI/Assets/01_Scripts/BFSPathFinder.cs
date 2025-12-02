@@ -27,6 +27,7 @@ public class BFSPathFinder : MonoBehaviour
     // 유니티 실행주기 함수중 하나로, 게임이 시작 할때, 컴포넌트가 준비되는 순간 한번만 호출됨
     // GetComponent<GridManager>() 는 같은 게임 옵제 에 붙어있는 그리드 매니저 컴포넌트 찾아오는 메소드
     // 빈 오브젝트인 그리드루트에 그리드매니저와 패스파인더를 같이 붙였기에 이 한줄의 코드로 오브젝트의 해당 기능 추가 할수 있음
+
     void Awake()
     {
         gridManager = GetComponent<GridManager>();

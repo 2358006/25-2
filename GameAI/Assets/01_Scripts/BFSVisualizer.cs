@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,7 +18,7 @@ public class BFSVisualizer : MonoBehaviour
     {
         if (Keyboard.current != null && Keyboard.current.bKey.wasPressedThisFrame)
         {
-            StartCoroutine(ShowPathRoutine());
+            StartCoroutine(ShowBFSPath());
         }
     }
 
@@ -29,14 +28,10 @@ public class BFSVisualizer : MonoBehaviour
     코루틴: IEnumerator를 반환하고, yield return을 사용하여 실행을 일시 중지할 수 있는 함수
     경로를 하나씩 초록색으로 칠해가며 보여주는 코루틴
     */
-    IEnumerator ShowPathRoutine()
+    IEnumerator ShowBFSPath()
     {
-        List<Vector2Int> path = bfsPathFinder.GetBFSPath();
+        var path = bfsPathFinder.GetBFSPath();
 
-        // 예외처리 : 경로가 없으면 아무것도 하지 않고 종료
-        if (path == null || path.Count == 0) { yield break; }
-
-        // 각 좌표를 순회하며 해당 타일을 초록색으로 칠함
         foreach (Vector2Int pos in path)
         {
             Tile tile = gridManager.GetTileBounds(pos);
@@ -46,5 +41,6 @@ public class BFSVisualizer : MonoBehaviour
             yield return new WaitForSeconds(stepDelaySeconds);
         }
 
+        yield return new WaitForSeconds(stepDelaySeconds);
     }
 }
