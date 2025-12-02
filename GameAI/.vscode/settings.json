@@ -66,5 +66,7 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj",
     },
-    "dotnet.defaultSolution": "GameAI.sln"
+    "dotnet.defaultSolution": "GameAI.sln",
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay"
 }
