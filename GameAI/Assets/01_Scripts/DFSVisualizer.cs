@@ -1,24 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class DFSVisualizer : MonoBehaviour
 {
-    DFSPathFinder dFSPathFinder = null; // 경로 탐색
+    DFSPathFinder dfsPathFinder = null; // 경로 탐색
     GridManager gridManager = null; // 그리드 경계 / 통로여부 / 타일정보 조회
     public float stepDelaySeconds = 0.5f; // 경로 표시 간격
 
     void Awake()
     {
         gridManager = GetComponent<GridManager>();
-        dFSPathFinder = GetComponent<DFSPathFinder>();
+        dfsPathFinder = GetComponent<DFSPathFinder>();
     }
 
     void Update()
     {
-        if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (Keyboard.current != null && Keyboard.current.dKey.wasPressedThisFrame)
         {
             StartCoroutine(ShowPathRoutine());
         }
@@ -32,7 +31,7 @@ public class DFSVisualizer : MonoBehaviour
     */
     IEnumerator ShowPathRoutine()
     {
-        List<Vector2Int> path = dFSPathFinder.GetDFSPath();
+        List<Vector2Int> path = dfsPathFinder.GetDFSPath();
 
         // 예외처리 : 경로가 없으면 아무것도 하지 않고 종료
         if (path == null || path.Count == 0) { yield break; }

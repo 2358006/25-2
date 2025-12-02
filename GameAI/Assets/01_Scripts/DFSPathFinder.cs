@@ -5,7 +5,6 @@ public class DFSPathFinder : MonoBehaviour
 {
     GridManager gridManager = null; // 그리드 경계 / 통로 여부 / 타일 정보 조회
 
-
     // DFS 탐색을 위한 시작, 도착 지점 설정
     [SerializeField] Vector2Int startLocation = new Vector2Int(0, 0);
     [SerializeField] Vector2Int endLocation = new Vector2Int(4, 4);
@@ -14,7 +13,6 @@ public class DFSPathFinder : MonoBehaviour
     {
         gridManager = GetComponent<GridManager>();
     }
-
 
     // 시작 / 도착 좌표를 코드로 변경
     // 필요시 다른 시작, 도착 지점 동적으로 변경 가능
