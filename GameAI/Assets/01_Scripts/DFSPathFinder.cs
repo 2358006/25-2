@@ -9,45 +9,35 @@ public class DFSPathFinder : MonoBehaviour
     [SerializeField] Vector2Int startLocation = new Vector2Int(0, 0);
     [SerializeField] Vector2Int endLocation = new Vector2Int(4, 4);
 
+    // 탐색 횟수 카운트
+    public int expandCount;
+    public int discoverCount;
+
     void Awake()
     {
         gridManager = GetComponent<GridManager>();
     }
 
-    // 시작 / 도착 좌표를 코드로 변경
-    // 필요시 다른 시작, 도착 지점 동적으로 변경 가능
-    // start : 시작점, end : 도착점
     public void SetStartLocation(Vector2Int start) // 시작지점 설정
     {
         startLocation = start;
     }
-
 
     public void SetEndLocation(Vector2Int end) // 도착지점 설정
     {
         endLocation = end;
     }
 
-    // DFS 탐색 실행 메소드
-    //  - HashSet을 사용하여 방문한 좌표를 기록 → 중복 방문 방지 + 빠른 탐색
-    //  - 최종적으로 경로 리스트(List<Vector2Int>)를 반환
     public List<Vector2Int> GetDFSPath()
     {
-        // [HashSet] : 중복된 값을 허용하지 않는 집합
+        expandCount = 0;
+        discoverCount = 0;
 
+        // [HashSet] : 중복된 값을 허용하지 않는 집합
         HashSet<Vector2Int> visitedLocation = new HashSet<Vector2Int>();
         return DFS(startLocation, endLocation, visitedLocation);
     }
 
-
-    /* DFS 재귀 탐색 로직 만들기
-    [탐색 순서]
-    현재 좌표가 유효한지 검사 (f_IsValid) > 
-    이미 방문한 좌표라면 중단 > 
-    현재 좌표가 도착점이면 리스트에 담아 반환 > 
-    상·하·좌·우 순서로 재귀 탐색 진행 > 
-    경로 발견 시 현재 좌표를 맨 앞에 추가
-    */
     List<Vector2Int> DFS(Vector2Int current, Vector2Int end, HashSet<Vector2Int> visited)
     {
         if (!IsValid(current) || visited.Contains(current))
@@ -56,9 +46,11 @@ public class DFSPathFinder : MonoBehaviour
         }
 
         visited.Add(current); //현재 좌표를 방문 목록에 등록해 중복 방문을 방지한다.
+        expandCount++;  // 실제로 방문한 노드 수 증가
 
         if (current == end) //도착지점에 도달했다면
         {
+            Debug.Log($"DFS Expand: {expandCount}, Discover: {discoverCount}");
             return new List<Vector2Int> { current };
         }
 
@@ -74,28 +66,18 @@ public class DFSPathFinder : MonoBehaviour
             Vector2Int.right
         };
 
-        /*
-         * 각 방향으로 한 칸 이동해 다음 좌표(vNeighbor)를 계산
-         * 그 좌표를 시작점으로 재귀적으로 f_DFS 호출
-         */
         foreach (Vector2Int dir in vDirections)
         {
-            //현재 위치에서 dir 방향으로 한 칸 이동한 이웃 좌표
-            Vector2Int neighbor = current + dir;
+            Vector2Int neighbor = current + dir; //현재 위치에서 dir 방향으로 한 칸 이동한 이웃 좌표
 
-            /*
-             * 이웃 좌표에서 도착지점까지의 경로를 탐색
-             * - 경로가 발견되면 현재 좌표를 경로의 맨 앞에 추가하고 반환
-             * - path에는 vNeighbor → ... → end 순서로 좌표가 들어있다
-             * 경로가 없으면 null이 반환되고, 다음 방향을 탐색한다
-             */
+            if (!visited.Contains(neighbor) && IsValid(neighbor))
+            {
+                discoverCount++;  // ⭐ 새로 발견한 노드 수 증가
+            }
+
             List<Vector2Int> path = DFS(neighbor, end, visited);
 
-            /*
-             * 경로가 발견되었다면, 현재 좌표를 경로의 맨 앞에 추가하고 반환
-             * current → vNeighbor → ... → end 순서로 경로가 구성된다
-             * 경로가 하나라도 발견되면 즉시 반환하므로, 가장 먼저 발견된 경로가 선택된다(DFS 특성)
-             */
+
             if (path != null)
             {
                 path.Insert(0, current);

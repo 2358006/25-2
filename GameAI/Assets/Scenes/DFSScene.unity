@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DFSPathFinder
   startLocation: {x: 0, y: 0}
-  endLocation: {x: 4, y: 4}
+  endLocation: {x: 19, y: 19}
   expandCount: 0
   discoverCount: 0
 --- !u!114 &415148035
@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BFSPathFinder
   startLocation: {x: 0, y: 0}
-  endLocation: {x: 4, y: 4}
+  endLocation: {x: 19, y: 19}
   expandCount: 0
   discoverCount: 0
 --- !u!1 &961739749
