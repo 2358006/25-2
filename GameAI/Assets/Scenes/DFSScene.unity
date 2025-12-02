@@ -257,8 +257,8 @@ GameObject:
   - component: {fileID: 415148031}
   - component: {fileID: 415148032}
   - component: {fileID: 415148034}
-  - component: {fileID: 415148036}
   - component: {fileID: 415148033}
+  - component: {fileID: 415148036}
   - component: {fileID: 415148035}
   m_Layer: 0
   m_Name: Grid
@@ -321,7 +321,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DFSPathFinder
   startLocation: {x: 0, y: 0}
-  endLocation: {x: 19, y: 19}
+  endLocation: {x: 4, y: 4}
+  expandCount: 0
+  discoverCount: 0
 --- !u!114 &415148035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,7 +350,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BFSPathFinder
   startLocation: {x: 0, y: 0}
-  endLocation: {x: 19, y: 19}
+  endLocation: {x: 4, y: 4}
+  expandCount: 0
+  discoverCount: 0
 --- !u!1 &961739749
 GameObject:
   m_ObjectHideFlags: 0
