@@ -1,9 +1,9 @@
 /* BFSPathFinder.cs
- * BFS (Breadth-First Search, 너비 우선 탐색)이란?
+    * BFS (Breadth-First Search, 너비 우선 탐색)이란?
     * BFS는 그래프나 격자(Grid)에서 시작점으로 부터 가까운 노드 (혹은 셀) 부터 차례대로 탐색하는 방식이다.
     * 큐(Queue) 자료구조를 사용하여, 현재 레벨의 모든 노드를 확인 한 뒤, 그 다음 레벨로 넘어간다.
     * DFS "깊게 파고드는" 방식이라면, BFS는 "넓게 퍼져나가는" 탐색을 한다.
- * 2. Why BFS(BFS를 사용하는 이유)
+    * 2. Why BFS(BFS를 사용하는 이유)
     * 최단 경로 보장
     * BFS는 시작점에서 목표 지점까지 가는 가장 짧은 경로를 보장한다.
     * 시작점에서 한 칸, 두 칸, 세 칸씩 차례대로 확장하므로 탐색의 범위가 원형으로 퍼져나가는 구조를 직관적으로 볼 수 있다.
@@ -14,6 +14,7 @@
 // List, Queue, Dictionary, HashSet 같은 자료구조 타입을 사용하기 위해 필요한 네임스페이스
 // BFS에서는 큐(Queue)와 방문 집합(HashSet), 부모 추적(Dictionary)를 사용할 예정이라 필요합니다.
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 

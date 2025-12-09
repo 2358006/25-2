@@ -7,8 +7,7 @@
 */
 
 using UnityEngine;
-// List, Dictionary, HashSet 등 제네릭 자료구조 사용을 위해 필요하다.
-using System.Collections.Generic;
+using System.Collections.Generic; // List, Dictionary, HashSet 등 제네릭 자료구조 사용을 위해 필요하다.
 using UnityEngine.UI;
 
 public class AStarPathFinder : MonoBehaviour

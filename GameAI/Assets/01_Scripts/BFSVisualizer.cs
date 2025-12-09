@@ -3,12 +3,12 @@
     키입력 ('B' key)을 감지해 코루틴을 실행
 */
 
-
-
 // 코루틴에서 사용하는 IEnumerator 타입을 사용하기 위해 필요합니다.
 // ShowBFSPath() 메소드는 IEnumerator를 반환하는 코루틴이므로, 이 using 구문이 필수입니다.
 using System.Collections;
+
 using UnityEngine;
+
 // 새로운 Input System을 사용할 때 필요한 네임스페이스입니다.
 // 이 스크립트에서는 Keyboard.current.bKey.wasPressedThisFrame 과 같이, 키보드 입력을 코드에서 직접 감지하는 기능을 사용합니다.
 using UnityEngine.InputSystem;
