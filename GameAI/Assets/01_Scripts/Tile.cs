@@ -18,7 +18,7 @@ public class Tile : MonoBehaviour
 
     //private로 선언된 내부값을 외부에서 초기화할 수 있도록 메소드 구현
     // GridManager에서 호출되는 초기화 메소드
-    public void f_Initialize(Vector2Int gridPos, Color initialColor)
+    public void Initialize(Vector2Int gridPos, Color initialColor)
     {
         gridPosition = gridPos;
 

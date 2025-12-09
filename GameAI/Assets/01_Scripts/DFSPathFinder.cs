@@ -5,6 +5,7 @@
 */
 
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class DFSPathFinder : MonoBehaviour
@@ -17,6 +18,10 @@ public class DFSPathFinder : MonoBehaviour
     // - (0,0) 좌표가 기본 시작점, (4,4) 좌표가 기본 도착점
     [SerializeField] Vector2Int startLocation = new Vector2Int(0, 0);
     [SerializeField] Vector2Int endLocation = new Vector2Int(19, 19);
+
+    // Text 출력
+    int dfsSearchCount = 0;
+    Text dfsSearchCountText = null;
 
     // GridManager를 통해 그리드 내부 판별, 이동 가능 여부 확인을 진행한다
     void Awake()
@@ -78,6 +83,7 @@ public class DFSPathFinder : MonoBehaviour
 
         if (current == end) //도착점에 도달했는지 확인
         {
+            if (dfsSearchCountText != null) { dfsSearchCountText.text = "DFS : " + dfsSearchCount.ToString(); }
             return new List<Vector2Int> { current }; //도착점이면 현재 좌표를 담은 리스트 반환
         }
 
@@ -85,7 +91,7 @@ public class DFSPathFinder : MonoBehaviour
             상하좌우 네 방향을 순서대로 탐색
             이 순서가 바뀌면 DFS 특성상 "처음 발견되는 경로"가 달라질 수 있다.
         */
-        Vector2Int[] vDirections = new Vector2Int[]
+        Vector2Int[] directions = new Vector2Int[]
         {
             Vector2Int.down, //하
             Vector2Int.up,   //상
@@ -96,7 +102,7 @@ public class DFSPathFinder : MonoBehaviour
             각 방향으로 한 칸 이동해 다음 좌표(neighbor)를 계산
             그 좌표를 시작점으로 재귀적으로 DFS 호출
         */
-        foreach (Vector2Int dir in vDirections)
+        foreach (Vector2Int dir in directions)
         {
             //현재 위치에서 dir 방향으로 한 칸 이동한 이웃 좌표
             Vector2Int neighbor = current + dir;
@@ -122,6 +128,7 @@ public class DFSPathFinder : MonoBehaviour
 
         return null;
     }
+
     // 유효 좌표 검사 메소드
     //좌표가 그리드 내부이며, 이동 가능한 셀인지 검사하는 메소드
     bool IsValid(Vector2Int pos)

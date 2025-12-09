@@ -15,6 +15,7 @@
 // BFS에서는 큐(Queue)와 방문 집합(HashSet), 부모 추적(Dictionary)를 사용할 예정이라 필요합니다.
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 // BFS(Breadth-First Search, 너비 우선 탐색) 알고리즘으로 시작 지점 (Start)에서 도착 지점 (End)까지의 경로를 찾는 클래스
@@ -31,14 +32,18 @@ public class BFSPathFinder : MonoBehaviour
     [SerializeField] Vector2Int startLocation = new Vector2Int(0, 0);
     [SerializeField] Vector2Int endLocation = new Vector2Int(19, 19);
 
+    // Text 출력
+    int bfsSearchCount = 0;
+    Text bfsSearchCountText = null;
+
     // Awake() 는 유니티 생명주기 함수 중 하나로, "게임이 시작할 때, 이 컴포넌트가 준비되는 순간 한 번만 호출되는 메소드"
     // GetComponent<GridManager>() 는 같은 GameObject에 붙어 있는 GridManager 컴포넌트를 찾아오는 메소드
     // 빈 오브젝트인 GridRoot에 GriManager와 BFSPathFinder가 같이 붙였기 때문에, 이 한 줄의 코드로 오브젝트에 해당 기능을 추가할 수 있다.
     void Awake()
     {
         gridManager = GetComponent<GridManager>(); // GridManager 컴포넌트 가져오기
+        bfsSearchCountText = GameObject.Find("BFS").GetComponent<Text>();
     }
-
 
     // GetBFSPath  : BFS로 실제로 경로를 찾는 메소드
     // BFS 알고리즘을 사용해 시작 지점에서 도착 지점까지의 경로를 찾는 메소드
@@ -84,6 +89,8 @@ public class BFSPathFinder : MonoBehaviour
             Vector2Int.right  // 우
         };
 
+        bfsSearchCount = 0;
+
         //BFS 메인 루프: 빈 큐가 나올때까지 반복
         while (queue.Count > 0)
         {
@@ -92,6 +99,7 @@ public class BFSPathFinder : MonoBehaviour
             // - 큐에서 가장 먼저 들어온 좌표를 꺼낸다.
             // - BFS는 "가까운 거리 순서대로" 큐에 쌓이기 때문에, 항상 거리 1 → 2 → 3 ... 순서대로 탐색해 나간다.
             Vector2Int current = queue.Dequeue();
+            bfsSearchCount++;
 
             // ② 도착 지점에 도달했는지 확인
             // - 종료 조건 : 도착 지점에 도달하면 경로 복원
@@ -99,6 +107,7 @@ public class BFSPathFinder : MonoBehaviour
             // ReconstructPath는 "출구에 도착했으니까, 이제 지나온 길을 역으로 따라가서 경로 리스트를 만들어 줘" 라는 의미
             if (current == endLocation)
             {
+                if (bfsSearchCountText != null) { bfsSearchCountText.text = "BFS : " + bfsSearchCount.ToString(); }
                 return ReconstructPath(cameFrom, endLocation);
             }
 
@@ -171,7 +180,6 @@ public class BFSPathFinder : MonoBehaviour
 
     // IsValid : 특정 좌표가 그리드 안 + 이동 가능한 칸인지 검사하는 메소드
     // 좌표가 그리드 내부이며, 이동 가능한 셀인지 검사하는 메소드
-
     bool IsValid(Vector2Int pos)
     {
         if (!gridManager.IsInside(pos)) //그리드 내부인지 확인
@@ -181,5 +189,4 @@ public class BFSPathFinder : MonoBehaviour
 
         return gridManager.IsWalkable(pos); //이동 가능한 셀인지 확인(벽이 아니여야 함)
     }
-
 }

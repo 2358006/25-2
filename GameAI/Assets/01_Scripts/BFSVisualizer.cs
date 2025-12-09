@@ -36,16 +36,14 @@ public class BFSVisualizer : MonoBehaviour
     // Start() 는 유니티 생명주기 함수로, 게임 오브젝트가 활성화된 직후 한 번 호출됩니다.
     //  - BFSVisualizer는 Start()에서 “길찾기 두뇌(BFSPathFinder)”와 “맵 관리자(GridManager)”를 준비해 놓고,
     //  - 나중에 키 입력이 오면 이 둘을 조합해 경로를 그려주는(시각화) 역할을 합니다.
-    void Start()
+    void Awake()
     {
         // 현재 GameObject(GridRoot)에 붙어 있는 BFSPathFinder 컴포넌트를 찾아서 bfsPathFinder 변수에 저장합니다.
         bfsPathFinder = GetComponent<BFSPathFinder>();
 
         // 동일하게 GridManager 컴포넌트를 찾아 gridManager 변수에 저장합니다.
         gridManager = GetComponent<GridManager>();
-
     }
-
 
     // 새로운 Input System의 'B' key 입력 감지 방법(wasPressedThisFrame == GetKeyDown)
     // 키보드 입력이 null이 아니고, 'B' 키가 이번 프레임에 눌렸다면 코루틴 시작
@@ -59,7 +57,6 @@ public class BFSVisualizer : MonoBehaviour
             StartCoroutine(ShowBFSPath());
         }
     }
-
 
     // ShowBFSPath 코루틴 : 경로를 한 칸씩 색칠하는 시각화 로직
     IEnumerator ShowBFSPath()
@@ -89,11 +86,5 @@ public class BFSVisualizer : MonoBehaviour
             // “한 번에 모든 타일이 바뀌는 것”이 아니라 한 칸씩, 차례대로 색이 칠해지는 애니메이션 효과를 얻을 수 있습니다.
             yield return new WaitForSeconds(stepDelaySeconds);
         }
-
-
-
-
-
-
     }
 }
