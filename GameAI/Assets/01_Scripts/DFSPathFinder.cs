@@ -27,7 +27,9 @@ public class DFSPathFinder : MonoBehaviour
     void Awake()
     {
         gridManager = GetComponent<GridManager>(); // GridManager 컴포넌트 가져오기
+        dfsSearchCountText = GameObject.Find("DFS").GetComponent<Text>();
     }
+
     // 시작/도착 좌표를 코드로 변경하기
     //  - 필요에 따라 다른 스크립트에서 시작/도착 지점을 동적으로 변경 가능하다.
     //  - start : 시작지점을 설정
@@ -59,6 +61,9 @@ public class DFSPathFinder : MonoBehaviour
             HashSet은 순서가 없고 중복을 허용하지 않는 데이터 집합이므로 방문한 위치를 빠르게 확인할 수 있다
         */
         HashSet<Vector2Int> visitedLocation = new HashSet<Vector2Int>();
+
+        dfsSearchCount = 0;
+
         return DFS(startLocation, endLocation, visitedLocation);
     }
 
@@ -74,6 +79,7 @@ public class DFSPathFinder : MonoBehaviour
     // DFS(깊이 우선 탐색) 알고리즘을 사용해 current에서 end까지의 경로를 찾는 재귀 메소드
     List<Vector2Int> DFS(Vector2Int current, Vector2Int end, HashSet<Vector2Int> visited)
     {
+        dfsSearchCount++;
         if (!IsValid(current) || visited.Contains(current)) //유효 좌표 검사 및 방문 여부 확인
         {
             return null; //유효하지 않으면 null 반환
@@ -125,7 +131,7 @@ public class DFSPathFinder : MonoBehaviour
                 return path;
             }
         }
-
+        if (dfsSearchCountText != null) { dfsSearchCountText.text = "DFS: " + dfsSearchCount.ToString(); }
         return null;
     }
 

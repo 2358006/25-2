@@ -126,7 +126,6 @@ public class BFSPathFinder : MonoBehaviour
                     cameFrom[next] = current; // next의 부모는 current
                 }
             }
-
         }
 
         // ④ 큐가 공백일때까지 도착점을 못 찾은 경우
