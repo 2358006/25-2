@@ -33,8 +33,8 @@ public class BFSVisualizer : MonoBehaviour
     //   - 1.0으로 늘리면, 한 칸씩 “천천히” 진행되는 연출을 볼 수 있습니다.
     [SerializeField] float stepDelaySeconds = 0.5f;
 
-    // Start() 는 유니티 생명주기 함수로, 게임 오브젝트가 활성화된 직후 한 번 호출됩니다.
-    //  - BFSVisualizer는 Start()에서 “길찾기 두뇌(BFSPathFinder)”와 “맵 관리자(GridManager)”를 준비해 놓고,
+    // Awake() 는 유니티 생명주기 함수로, 게임 오브젝트가 활성화된 직후 한 번 호출됩니다.
+    //  - BFSVisualizer는 Atart()에서 “길찾기 두뇌(BFSPathFinder)”와 “맵 관리자(GridManager)”를 준비해 놓고,
     //  - 나중에 키 입력이 오면 이 둘을 조합해 경로를 그려주는(시각화) 역할을 합니다.
     void Awake()
     {

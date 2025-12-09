@@ -17,7 +17,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 // BFS(Breadth-First Search, 너비 우선 탐색) 알고리즘으로 시작 지점 (Start)에서 도착 지점 (End)까지의 경로를 찾는 클래스
 public class BFSPathFinder : MonoBehaviour
 {
@@ -126,6 +125,7 @@ public class BFSPathFinder : MonoBehaviour
                     cameFrom[next] = current; // next의 부모는 current
                 }
             }
+
         }
 
         // ④ 큐가 공백일때까지 도착점을 못 찾은 경우
@@ -179,6 +179,7 @@ public class BFSPathFinder : MonoBehaviour
 
     // IsValid : 특정 좌표가 그리드 안 + 이동 가능한 칸인지 검사하는 메소드
     // 좌표가 그리드 내부이며, 이동 가능한 셀인지 검사하는 메소드
+
     bool IsValid(Vector2Int pos)
     {
         if (!gridManager.IsInside(pos)) //그리드 내부인지 확인
@@ -188,4 +189,5 @@ public class BFSPathFinder : MonoBehaviour
 
         return gridManager.IsWalkable(pos); //이동 가능한 셀인지 확인(벽이 아니여야 함)
     }
+
 }
