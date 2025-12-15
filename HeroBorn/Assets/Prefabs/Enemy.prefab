@@ -69,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 014094dd9e97e264c964b58b2fb91721, type: 2}
+  - {fileID: 2100000, guid: 289128b7cfc33a44ea13268645317a0e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -149,3 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 330c4b13bfd20f64a96f30eed2907d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  player: {fileID: 0}
+  patrolRoute: {fileID: 0}
+  locations: []
