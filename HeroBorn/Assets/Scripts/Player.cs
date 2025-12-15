@@ -48,8 +48,8 @@ public class Player : MonoBehaviour
 
         if (isShooting)
         {
-            GameObject newBullet = Instantiate(bullet, this.transform.position + new Vector3(0, 0, 1), this.transform.rotation);
-            Rigidbody bulletRb = newBullet.GetComponent<Rigidbody>();
+            GameObject newbullet = Instantiate(bullet, this.transform.position + new Vector3(0, 0, 1), this.transform.rotation);
+            Rigidbody bulletRb = newbullet.GetComponent<Rigidbody>();
             bulletRb.linearVelocity = this.transform.forward * bulletSpeed;
         }
         isShooting = false;
@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
 
         if (Keyboard.current.spaceKey.isPressed) { isJumping = true; }
 
-        if (Mouse.current.leftButton.wasPressedThisFrame) { isShooting = true; } // 단발 발사
+        if (Mouse.current.leftButton.isPressed) { isShooting = true; } // 단발 발사
 
         if (GameManager.instance.isGameFinished)
         {

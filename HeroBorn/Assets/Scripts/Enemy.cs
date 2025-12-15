@@ -103,7 +103,7 @@ public class Enemy : MonoBehaviour
 
         if (collision.gameObject.tag == "Bullet")
         {
-            enemyLives -= Random.Range(1, 4);
+            enemyLives -= 2;
         }
     }
 
