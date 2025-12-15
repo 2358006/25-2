@@ -2,8 +2,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
-    GameManager gameManager;
-
     Rigidbody rigid;
     CapsuleCollider col;
 
@@ -28,13 +26,17 @@ public class Player : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void FixedUpdate()
     {
-        Vector3 rotation = Vector3.up * hInput;
+        Vector3 rotation = Vector3.up * hInput * rotateSpeed;
+
         Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime);
+
         rigid.MovePosition(this.transform.position + this.transform.forward * vInput * Time.fixedDeltaTime);
         rigid.MoveRotation(rigid.rotation * angleRot);
 
@@ -55,27 +57,39 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        // 키보드가 없는 경우 방지
-        if (Keyboard.current == null) return;
+        // 입력 장치 없는 경우 방지
+        if (Keyboard.current == null) { return; }
+        if (Mouse.current == null) { return; }
 
         // 새 Input System 방식으로 입력 읽기
         vInput = 0f;
-        hInput = 0f;
 
         if (Keyboard.current.wKey.isPressed) vInput += moveSpeed;
         if (Keyboard.current.sKey.isPressed) vInput -= moveSpeed;
-        if (Keyboard.current.aKey.isPressed) hInput -= rotateSpeed;
-        if (Keyboard.current.dKey.isPressed) hInput += rotateSpeed;
+
+        hInput = Mouse.current.delta.x.ReadValue();
 
         if (Keyboard.current.spaceKey.isPressed) { isJumping = true; }
-        if (Keyboard.current.jKey.isPressed) { isShooting = true; }
+
+        if (Mouse.current.leftButton.wasPressedThisFrame) { isShooting = true; } // 단발 발사
+
+        if (GameManager.instance.isGameFinished)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Enemy")
+        if (collision.gameObject.tag == "BulletEnemy")
         {
-            gameManager.hp -= 1;
+            GameManager.instance.hp -= 1;
+        }
+
+        if (collision.gameObject.name == "DeadZone")
+        {
+            GameManager.instance.GameFail();
         }
     }
 
@@ -83,7 +97,6 @@ public class Player : MonoBehaviour
     {
         Vector3 capsuleBottom = new Vector3(col.bounds.center.x, col.bounds.min.y, col.bounds.center.z);
         bool isGrunded = Physics.CheckCapsule(col.bounds.center, capsuleBottom, distanceToGround, groundLayer, QueryTriggerInteraction.Ignore);
-
         return isGrunded;
     }
 }

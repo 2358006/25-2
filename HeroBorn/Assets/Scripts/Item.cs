@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class item : MonoBehaviour
 {
-    GameManager gameManager;
     Transform itemTransform;
 
     [Header("Speed")]
@@ -10,13 +9,14 @@ public class item : MonoBehaviour
 
     void Awake()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         itemTransform = this.GetComponent<Transform>();
     }
 
     void Update()
     {
         itemTransform.Rotate(rotSpeed * Time.deltaTime, 0, 0);
+
+        if (GameManager.instance.isGameFinished) { Destroy(this.transform.gameObject); }
     }
 
     void OnCollisionEnter(Collision collision)
@@ -24,9 +24,10 @@ public class item : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             Destroy(this.transform.gameObject);
-            Debug.Log("Item collected");
+            Debug.Log("Item ate");
         }
 
-        gameManager.items += 1;
+        GameManager.instance.UpdateScene("You get a item");
+        GameManager.instance.PlusHp();
     }
 }

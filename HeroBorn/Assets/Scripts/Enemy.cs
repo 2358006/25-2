@@ -1,18 +1,24 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem;
 
 public class Enemy : MonoBehaviour
 {
-    public Transform player;
+    [Header("Bullet")]
+    public GameObject bullet;
+    public float bulletSpeed = 100f;
+    public float fireRate = 3f;
 
-    public Transform patrolRoute;
-    public List<Transform> locations;
-
-    int locationIndex = 0;
+    // NavMesh
+    Transform player;
+    Transform patrolRoute;
+    List<Transform> locations;
     NavMeshAgent agent;
+    int locationIndex = 0;
 
-    int lives = 3;
+    int lives = 1;
     public int enemyLives
     {
         get { return lives; }
@@ -24,6 +30,7 @@ public class Enemy : MonoBehaviour
             {
                 Destroy(this.gameObject);
                 Debug.Log("Enmey Down");
+                GameManager.instance.enemys++;
             }
         }
     }
@@ -32,22 +39,46 @@ public class Enemy : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Player").transform;
+        patrolRoute = GameObject.Find("PatrolRoute").transform;
+
+        locations = new List<Transform>();
     }
 
     void Start()
     {
         InitializePatroalRoute();
         MoveToNextPatrolLocation();
+        StartCoroutine(Shoot());
     }
 
     void Update()
     {
-        if (agent.remainingDistance < 0.2f && !agent.pathPending)
+        if (agent.remainingDistance < 0.2f && !agent.pathPending) { MoveToNextPatrolLocation(); }
+        if (GameManager.instance.isGameFinished) { Destroy(this.transform.gameObject); }
+        if (Keyboard.current.lKey.isPressed) { enemyLives -= 2; }
+    }
+
+    #region Funcion
+
+    void ShootBullet()
+    {
+        GameObject newBullet = Instantiate(bullet, this.transform.position + new Vector3(0, 0, 1), this.transform.rotation);
+        Rigidbody bulletRb = newBullet.GetComponent<Rigidbody>();
+        bulletRb.linearVelocity = this.transform.forward * bulletSpeed;
+    }
+
+    IEnumerator Shoot()
+    {
+        while (true)
         {
-            MoveToNextPatrolLocation();
+            ShootBullet();
+            yield return new WaitForSeconds(fireRate);
         }
     }
 
+    #endregion
+
+    #region Navmesh
     void InitializePatroalRoute()
     {
         foreach (Transform child in patrolRoute)
@@ -64,13 +95,15 @@ public class Enemy : MonoBehaviour
 
         locationIndex = (locationIndex + 1) % locations.Count;
     }
+    #endregion
 
+    #region  Collision & Trigger
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Bulelt(Clone)")
+
+        if (collision.gameObject.tag == "Bullet")
         {
-            enemyLives -= 1;
-            Debug.Log("Critical Hit");
+            enemyLives -= Random.Range(1, 4);
         }
     }
 
@@ -90,4 +123,5 @@ public class Enemy : MonoBehaviour
             Debug.Log("Player out of range, resume patrol");
         }
     }
+    #endregion
 }

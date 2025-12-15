@@ -6,6 +6,6 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        // Destroy(this.gameObject, onScreenDelay);
+        Destroy(this.gameObject, onScreenDelay);
     }
 }
