@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "ShootingCPPEditor Editor Win64 Development (ShootingCPP)",
+            "compilerPath": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "msvc-x64",
+            "compileCommands": [
+                "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP.json"
+            ]
+        },
+        {
+            "name": "Win32",
+            "compilerPath": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "msvc-x64",
+            "compileCommands": [
+                "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_Default.json"
+            ]
+        }
+    ],
+    "version": 4
+}

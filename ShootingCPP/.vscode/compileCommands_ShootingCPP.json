@@ -1,0 +1,186 @@
+[
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\Private\\AccessTest.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\Private\\Bullet.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\Private\\CodingTestActor.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\Private\\EnemyActor.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\Private\\EnemyFactory.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\Private\\KillZone.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\Private\\MainWidget.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\Private\\MenuWidget.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\Private\\PlayerPawn.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\Private\\ShootingGameModeBase.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\Public\\AccessTest.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\Public\\Bullet.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\Public\\CodingTestActor.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\Public\\EnemyActor.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\Public\\EnemyFactory.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\Public\\KillZone.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\Public\\MainWidget.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\Public\\MenuWidget.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\Public\\PlayerPawn.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\Public\\ShootingGameModeBase.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\ShootingCPP.Build.cs",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\ShootingCPP.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\Source\\ShootingCPP\\ShootingCPP.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\D511\\Desktop\\2.3 ~ 2.6 - ShootingCPP 5.4\\.vscode\\compileCommands_ShootingCPP\\ShootingCPP.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	}
+]

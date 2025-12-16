@@ -1,0 +1,90 @@
+﻿// Fill out your copyright notice in the Description page of Project Settings.
+
+#include "CodingTestActor.h"
+
+ACodingTestActor::ACodingTestActor()
+{
+	PrimaryActorTick.bCanEverTick = true;
+}
+
+void ACodingTestActor::BeginPlay()
+{
+	Super::BeginPlay();
+
+	// Hello World 출력
+	// UE_LOG(LogTemp, Warning, TEXT("Hello World!"));
+	// UE_LOG(LogTemp, Warning, TEXT("%d"), number1);
+	// UE_LOG(LogTemp, Warning, TEXT("%.2f"), number2);
+	// UE_LOG(LogTemp, Warning, TEXT("%s"), *name);
+
+	// Add 함수를 이용해 number1과 number2 변수의 값의 합 구함
+	// int32 result = Add(number1, number2);
+
+	// 함수 결과로 반환된 result의 값을 출력
+	// UE_LOG(LogTemp, Warning, TEXT("%d"), result);
+
+	// number1의 값이 100 이상이면
+	if (number1 >= 100)
+	{
+		// number1의 값이 100보다 크다는 문구 출력
+		// UE_LOG(LogTemp, Warning, TEXT("number1의 값이 100보다 크다!"));
+	}
+	// 100보다 크지 않고, number1의 값이 10보다 크면
+	else if (number1 >= 10)
+	{
+		// number1의 값이 10이상 100 미만이다라는 문구를 출력
+		// UE_LOG(LogTemp, Warning, TEXT("number1의 값이 10이상 100 미만이다!"));
+	}
+	// 둘 다 아니면
+	else
+	{
+		// number1의 값이 10 미만이다 문구를 출력
+		// UE_LOG(LogTemp, Warning, TEXT("number1의 값이 10 미만이다!"));
+	}
+
+	// isReady가 true면
+	if (isReady)
+	{
+		// Add 함수를 실행한다.
+		int32 result = Add(number1, number2);
+		// UE_LOG(LogTemp, Warning, TEXT("%d"), result);
+	}
+	// 그렇지 않으면
+	else
+	{
+		// 준비가 안됐다는 문구를 출력
+		// UE_LOG(LogTemp, Warning, TEXT("아직 준비 안됨 ㅅㄱ"));
+	}
+
+	// number1의 값을 1씩 증가시켜가면서 100번 출력하고 싶다.
+	// for (int32 i = 0; i < 100; i++)
+	//{
+	//	// number1의 값을 1 증가
+	//	number1++;
+	//	UE_LOG(LogTemp, Warning, TEXT("%d"), number1);
+	//}
+
+	// 0부터 99까지 100회 반복해서 실행
+	for (int32 i = 0; i < 100; i++)
+	{
+		// i를 2로 나눈 나머지 값을 구함.
+		int32 result = i % 2;
+
+		// 만일, result 값이 0이면 짝수라고 출력
+		if (result == 0)
+		{
+			// UE_LOG(LogTemp, Warning, TEXT("%d는 짝수입니다."), i);
+		}
+	}
+}
+
+void ACodingTestActor::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+}
+
+int32 ACodingTestActor::Add(int32 num1, int32 num2)
+{
+	int32 result = num1 + num2;
+	return result;
+}
